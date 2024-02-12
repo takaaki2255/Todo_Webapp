@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ToDoリスト</title>
+  </head>
+  <body>
+    <form action="/" method="post">
+      <p>予定:<input type="text" name="text" /></p>
+      <p>
+        状態:
+        <select name="status">
+          <option value="未実行">未実行</option>
+          <option value="実行中">実行中</option>
+          <option value="完了">完了</option>
+        </select>
+      </p>
+      <p><input type="submit" value="確定" /></p>
+    </form>
+
+    <ul>
+      {{range .todos}}
+      <li><h3>内容：{{.Text}}、 状態：{{.Status}}</h3></li>
+      {{end}}
+    </ul>
+  </body>
+</html>
